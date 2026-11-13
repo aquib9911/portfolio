@@ -56,6 +56,30 @@ nav ul a{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-tran
 nav ul a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:currentColor;transition:.3s}
 nav ul a:hover::after{width:100%}
 @media (max-width:720px){nav ul{display:none}}
+/* mobile menu */
+.menu-btn{display:none}
+@media (max-width:720px){
+  .menu-btn{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:6px;width:44px;height:44px;margin-left:-10px;padding:10px;background:none;border:0;cursor:pointer;color:#fff}
+  .menu-btn span{display:block;height:2px;width:24px;background:currentColor}
+  .menu-btn span:last-child{width:15px}
+  nav .brand{margin-left:auto}
+}
+.mnav{position:fixed;inset:0;z-index:80;visibility:hidden;pointer-events:none;transition:visibility 0s .45s}
+.mnav::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.6);opacity:0;transition:opacity .35s}
+.mnav-panel{position:absolute;top:0;left:0;bottom:0;width:min(84vw,340px);background:var(--bg2);border-right:1px solid var(--line);transform:translateX(-100%);transition:transform .45s cubic-bezier(.2,.7,.2,1);padding:18px 24px 28px;display:flex;flex-direction:column}
+.mnav.open{visibility:visible;pointer-events:auto;transition:visibility 0s}
+.mnav.open::before{opacity:1}
+.mnav.open .mnav-panel{transform:none}
+.mnav-top{display:flex;justify-content:space-between;align-items:center;height:46px;margin-bottom:28px}
+.mnav-close{width:44px;height:44px;margin-right:-10px;background:none;border:0;color:var(--fg);font-size:1.9rem;line-height:1;cursor:pointer}
+.mnav-link{display:flex;align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);font-family:var(--disp);font-weight:800;font-size:2.1rem;letter-spacing:-.03em;color:var(--fg);opacity:0;transform:translateX(-24px);transition:opacity .4s,transform .45s cubic-bezier(.2,.7,.2,1)}
+.mnav-link i{font-style:normal;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--acc);font-weight:400}
+.mnav.open .mnav-link{opacity:1;transform:none}
+.mnav.open .mnav-link:nth-child(1){transition-delay:.12s}
+.mnav.open .mnav-link:nth-child(2){transition-delay:.18s}
+.mnav.open .mnav-link:nth-child(3){transition-delay:.24s}
+.mnav.open .mnav-link:nth-child(4){transition-delay:.30s}
+.mnav-foot{margin-top:auto}
 
 /* hero */
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:56px;overflow:hidden}
@@ -329,6 +353,7 @@ img,video,canvas{-webkit-user-drag:none;user-drag:none;-webkit-touch-callout:non
 
 <nav>
   <div class="wrap">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span></button>
     <a href="#top" class="brand">Aquib</a>
     <ul>
       <li><a href="#work">Work</a></li>
@@ -338,6 +363,18 @@ img,video,canvas{-webkit-user-drag:none;user-drag:none;-webkit-touch-callout:non
     </ul>
   </div>
 </nav>
+<div class="mnav" id="mnav" aria-hidden="true">
+  <div class="mnav-panel" role="dialog" aria-label="Menu">
+    <div class="mnav-top"><span class="mono">Menu</span><button class="mnav-close" id="mnavClose" aria-label="Close menu">&times;</button></div>
+    <div class="mnav-links">
+      <a class="mnav-link" href="#work"><i>01</i>Work</a>
+      <a class="mnav-link" href="#playground"><i>02</i>Playground</a>
+      <a class="mnav-link" href="#experience"><i>03</i>Experience</a>
+      <a class="mnav-link" href="#contact"><i>04</i>Contact</a>
+    </div>
+    <div class="mnav-foot mono">Aquib · Art Director, Mumbai</div>
+  </div>
+</div>
 
 <header class="hero" id="top">
   <canvas id="field"></canvas>
@@ -759,6 +796,17 @@ const RESUME_URL=S.resume||'resume.pdf';
   const bounce=()=>{if(cv.classList.contains('open')||document.hidden)return;btn.classList.remove('bounce');void btn.offsetWidth;btn.classList.add('bounce')};
   btn.addEventListener('animationend',()=>btn.classList.remove('bounce'));
   setTimeout(bounce,8000);setInterval(bounce,180000);
+})();
+
+/* ================= mobile menu ================= */
+(function(){
+  const m=document.getElementById('mnav'),b=document.getElementById('menuBtn');
+  const set=o=>{m.classList.toggle('open',o);m.setAttribute('aria-hidden',!o);b.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''};
+  b.addEventListener('click',()=>set(true));
+  document.getElementById('mnavClose').addEventListener('click',()=>set(false));
+  m.addEventListener('click',e=>{if(e.target===m||e.target.closest('.mnav-link'))set(false)});
+  addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});
+  addEventListener('resize',()=>{if(innerWidth>720)set(false)});
 })();
 
 /* ================= split headings + reveal ================= */
