@@ -24,7 +24,7 @@ window.SITE = {
   behance: "https://www.behance.net/aquib",
   vimeo: "https://vimeo.com/user167879510",
   linkedin: "https://www.linkedin.com/in/imcrazy/",
-  resume: "resume.pdf",                  // upload resume.pdf, or paste a Google Drive / Dropbox link
+  resume: "https://drive.google.com/file/d/1OALwhe5fsCcVFWB88EsGUzT_iCv5m2rg/view?usp=drive_link",                  // upload resume.pdf, or paste a Google Drive / Dropbox link
 
   /* ---------- Scrolling words under the top section ---------- */
   marquee: ["Graphic design", "Motion graphics", "Static designs", "Dynamic videos", "Visual concepts", "Art direction"],
