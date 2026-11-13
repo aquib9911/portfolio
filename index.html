@@ -309,6 +309,8 @@ section{padding:104px 0}
 @media (min-width:821px){.hero-foot{padding-right:84px}}
 @media (max-width:820px){.cv{right:16px;bottom:16px}.cv-btn{width:52px;height:52px}.cv-btn .tip{display:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.split .w>span{transform:none}#loader{display:none}}
+/* image protection: no right-click save, no drag, no long-press save */
+img,video,canvas{-webkit-user-drag:none;user-drag:none;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
 </style>
 </head>
 <body>
@@ -779,6 +781,13 @@ if(reduce){ld.remove()}else{let n=0;const it=setInterval(()=>{n=Math.min(100,n+M
 
 document.getElementById('yr').textContent=new Date().getFullYear();
 requestAnimationFrame(loop);
+</script>
+<script>
+/* image protection: block right-click, drag and long-press save on pictures and videos */
+(function(){const isMedia=t=>t&&t.closest&&t.closest('img,video,canvas,picture,.shot');
+document.addEventListener('contextmenu',e=>{if(isMedia(e.target))e.preventDefault()},true);
+document.addEventListener('dragstart',e=>{if(isMedia(e.target))e.preventDefault()},true);
+new MutationObserver(()=>document.querySelectorAll('img:not([draggable="false"])').forEach(i=>i.setAttribute('draggable','false'))).observe(document.documentElement,{childList:true,subtree:true});})();
 </script>
 </body>
 </html>
