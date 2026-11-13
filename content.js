@@ -237,7 +237,8 @@ window.SITE = {
     { name: "Lightroom", icon: "icons/lightroom.png", use: "Photo colour and grading" },
     { name: "Acrobat", icon: "icons/acrobat.png", use: "PDFs, proofing and print files" },
     { name: "After Effects", icon: "icons/after-effects.png", use: "Motion graphics" },
-    { name: "InDesign", icon: "icons/indesign.png", use: "Layouts and print" }
+    { name: "InDesign", icon: "icons/indesign.png", use: "Layouts and print" },
+    { name: "Figma", icon: "icons/figma.png", use: "UI design and prototyping" }
   ],
 
   /* ---------- My experience (newest first) ---------- */
