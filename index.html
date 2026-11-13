@@ -747,7 +747,7 @@ const RESUME_URL=S.resume||'resume.pdf';
   const cv=document.getElementById('cv'),btn=document.getElementById('cvBtn'),a=document.getElementById('cvDl');
   let u=RESUME_URL.trim();
   const g=u.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?.*id=)([\w-]+)/);
-  if(g)u=`https://drive.google.com/uc?export=download&id=${g[1]}`;
+  if(g)u=`https://drive.usercontent.google.com/download?id=${g[1]}&export=download&confirm=t`;
   else if(/dropbox\.com/.test(u))u=u.replace(/([?&])dl=0/,'$1dl=1')+(/[?&]dl=1/.test(u)?'':(u.includes('?')?'&':'?')+'dl=1');
   a.href=u;
   const set=o=>{cv.classList.toggle('open',o);btn.setAttribute('aria-expanded',o)};
