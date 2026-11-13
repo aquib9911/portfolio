@@ -70,9 +70,9 @@ nav ul a:hover::after{width:100%}
 .mnav.open{visibility:visible;pointer-events:auto;transition:visibility 0s}
 .mnav.open::before{opacity:1}
 .mnav.open .mnav-panel{transform:none}
-.mnav-top{display:flex;justify-content:space-between;align-items:center;height:46px;margin-bottom:28px}
+.mnav-top{display:flex;justify-content:space-between;align-items:center;height:46px;margin-bottom:18px}
 .mnav-close{width:44px;height:44px;margin-right:-10px;background:none;border:0;color:var(--fg);font-size:1.9rem;line-height:1;cursor:pointer}
-.mnav-link{display:flex;align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);font-family:var(--disp);font-weight:800;font-size:2.1rem;letter-spacing:-.03em;color:var(--fg);opacity:0;transform:translateX(-24px);transition:opacity .4s,transform .45s cubic-bezier(.2,.7,.2,1)}
+.mnav-link{display:flex;align-items:baseline;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);font-family:var(--disp);font-weight:700;font-size:clamp(1.1rem,5.6vw,1.45rem);letter-spacing:-.02em;color:var(--fg);opacity:0;transform:translateX(-24px);transition:opacity .4s,transform .45s cubic-bezier(.2,.7,.2,1)}
 .mnav-link i{font-style:normal;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--acc);font-weight:400}
 .mnav.open .mnav-link{opacity:1;transform:none}
 .mnav.open .mnav-link:nth-child(1){transition-delay:.12s}
