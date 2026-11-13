@@ -296,6 +296,8 @@ section{padding:104px 0}
 .cv-btn{pointer-events:auto}
 .cv-btn{width:58px;height:58px;border-radius:50%;border:0;background:var(--acc);color:var(--bg);display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .25s cubic-bezier(.2,.7,.2,1)}
 .cv-btn:hover{transform:scale(1.08)}
+@keyframes cvBounce{0%,100%{transform:translateY(0) scale(1)}12%{transform:translateY(-34px) scale(1.06,.94)}24%{transform:translateY(0) scale(1.14,.86)}36%{transform:translateY(-20px) scale(.96,1.04)}48%{transform:translateY(0) scale(1.08,.92)}60%{transform:translateY(-9px)}72%{transform:translateY(0) scale(1.03,.97)}84%{transform:translateY(-3px)}}
+.cv-btn.bounce{animation:cvBounce 1.4s cubic-bezier(.3,.6,.4,1)}
 .cv-btn svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .cv-btn .tip{position:absolute;right:70px;white-space:nowrap;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;background:var(--fg);color:var(--bg);padding:7px 11px;border-radius:100px;opacity:0;transform:translateX(6px);transition:.25s;pointer-events:none}
 .cv-btn:hover .tip{opacity:1;transform:none}
@@ -753,6 +755,9 @@ const RESUME_URL=S.resume||'resume.pdf';
   document.addEventListener('click',e=>{if(!cv.contains(e.target))set(false)});
   addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});
   a.addEventListener('click',()=>setTimeout(()=>set(false),300));
+  const bounce=()=>{if(cv.classList.contains('open')||document.hidden)return;btn.classList.remove('bounce');void btn.offsetWidth;btn.classList.add('bounce')};
+  btn.addEventListener('animationend',()=>btn.classList.remove('bounce'));
+  setTimeout(bounce,8000);setInterval(bounce,180000);
 })();
 
 /* ================= split headings + reveal ================= */
