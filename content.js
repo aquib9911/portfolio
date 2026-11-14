@@ -15,7 +15,7 @@ window.SITE = {
 
   /* ---------- Top of the page ----------
      Words between <em> and </em> show in orange italics. <br> starts a new line. */
-  intro: "I'm Aquib, a visual designer from Mumbai working in <em>graphic design and motion</em> since 2018. I tell brand stories across fintech, media and marketing, lead campaigns end to end in digital and print, and use GenAI tools to move faster.",
+  intro: "I'm Aquib, an art director from Mumbai working in <em>graphic design and motion</em> since 2018. I tell brand stories across fintech, media and marketing, lead campaigns end to end in digital and print, and use GenAI tools to move faster.",
   availability: "Available for<br>full time",
 
   /* ---------- Contact and links ---------- */
