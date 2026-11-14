@@ -74,6 +74,17 @@ To remove a project, delete its whole block, including the comma after it.
 
 ---
 
+## Social media and Motion rows
+
+These sit under the project cards in Selected work, 4 tiles each. Upload the files to the `work` folder with these names:
+
+- Social media posts: `social-1.jpg` to `social-4.jpg` (portrait 4:5 looks best)
+- Motion pieces: `motion-1.mp4` to `motion-4.mp4` (9:16 reels, under about 20 MB each)
+
+That's it. A tile appears as soon as its file is uploaded, and a row stays hidden until it has at least one file. To add a caption or link a tile to the real post, fill in `title` or `link` in the `social` and `motion` lists in `content.js`.
+
+---
+
 ## Tool icons on the Direction board
 
 Upload the icon files to the `icons` folder with these names:

@@ -228,6 +228,31 @@ window.SITE = {
   }
   ],
 
+  /* ---------- Social media (4 posts) ----------
+     Shows under the project cards in Selected work. Upload the pictures to the
+     work folder with these names, or change the paths. Portrait 4:5 looks best.
+     title is optional. link is optional: add an Instagram or LinkedIn post link
+     to open the real post, or leave "" to open the picture large on the site.
+     A slot with no picture stays hidden, so the site never shows an empty box. */
+  social: [
+    { title: "", file: "work/social-1.jpg", link: "" },
+    { title: "", file: "work/social-2.jpg", link: "" },
+    { title: "", file: "work/social-3.jpg", link: "" },
+    { title: "", file: "work/social-4.jpg", link: "" }
+  ],
+
+  /* ---------- Motion (4 pieces) ----------
+     Short MP4 videos (9:16 reels look best), uploaded to the work folder.
+     They play silently on the page and with sound when clicked.
+     Keep each video under about 20 MB so the site stays fast.
+     link is optional: add a Vimeo, YouTube or Instagram link to open it there. */
+  motion: [
+    { title: "", file: "work/motion-1.mp4", link: "" },
+    { title: "", file: "work/motion-2.mp4", link: "" },
+    { title: "", file: "work/motion-3.mp4", link: "" },
+    { title: "", file: "work/motion-4.mp4", link: "" }
+  ],
+
   /* ---------- Tool icons on the Direction board ----------
      Upload the icon files to the icons folder. */
   apps: [
