@@ -248,7 +248,7 @@ window.SITE = {
     { years: "2022 to 2025", role: "Graphic Designer", company: "Attentive", note: "Brand, presentation, poster and motion design for a Sequoia-backed sales automation startup serving US outdoor services." },
     { years: "2021 to 2022", role: "Senior Graphic Designer and Visualizer", company: "MEDIAMIX", note: "Visual communication, social and digital media, branding and print collateral." },
     { years: "2020 to 2021", role: "Senior Graphic Designer", company: "Loanwalle", note: "Ad campaigns, print collateral, UI and motion design for digital marketing." },
-    { years: "2020 to 2020", role: "Senior Graphic Designer", company: "Cureos", note: "Print and layout design." },
+    { years: "2020", role: "Senior Graphic Designer", company: "Cureos", note: "Print and layout design." },
     { years: "2019 to 2020", role: "Graphic Designer", company: "NITD", note: "Graphic design for a training and development institute." },
     { years: "2018 to 2019", role: "Graphic Designer", company: "creativend", note: "Freelance graphic design in the Greater Delhi area." }
   ],

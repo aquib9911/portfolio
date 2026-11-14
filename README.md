@@ -1,6 +1,6 @@
 # Aquib · Portfolio
 
-Live at **imcrazy76.github.io**. Everything on the site can be changed from GitHub in the browser. No code, no software.
+Live at **https://aquib9911.github.io/portfolio/**. Everything on the site can be changed from GitHub in the browser. No code, no software.
 
 ## The files
 
@@ -9,7 +9,7 @@ Live at **imcrazy76.github.io**. Everything on the site can be changed from GitH
 | `content.js` | **All the words, links and picture paths.** This is the file you edit. |
 | `work/` | Pictures for the Selected work projects |
 | `icons/` | Tool icons for the Direction board |
-| `resume.pdf` | Your resume (the orange download button) |
+| `resume.pdf` | Optional. Your resume, if you'd rather host it here than on Google Drive |
 | `index.html` | The design. You don't need to touch it. |
 
 After every change, the live site updates in 1 to 2 minutes. If you don't see it, refresh with **Ctrl + Shift + R** (Windows) or **Cmd + Shift + R** (Mac).
@@ -86,7 +86,9 @@ PNG or SVG both work. To add another tool, copy a line in the `apps` list in `co
 
 ## Resume
 
-Upload your PDF as `resume.pdf` at the top level of the repo, next to `index.html`. To use a Google Drive link instead, paste it into `resume:` in `content.js` and set the file's sharing to "Anyone with the link".
+The orange button opens the link in `resume:` in `content.js`. Right now that is a Google Drive link: the button opens the Drive viewer in a new tab (works on phones too) and people can download from there. Keep the file's sharing on "Anyone with the link".
+
+To host the PDF here instead, upload it as `resume.pdf` next to `index.html` and set `resume: ""` in `content.js`. The button then downloads it straight away.
 
 ---
 
